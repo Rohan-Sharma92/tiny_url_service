@@ -1,0 +1,101 @@
+{
+	"info": {
+		"_postman_id": "67352886-a9be-4294-94ce-b2502d49ca4e",
+		"name": "ShortLink Docker",
+		"description": "A URL shortening service developed using flask framework.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "EncodeRequest",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"url\":\"https://stackoverflow.com/questions/3610272/\",\r\n   \"alias\":\"py_ques\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/encode",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"encode"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DecodeRequest",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"url\":\"https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_concepts_example_requests.htm\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/decode?shortURL=http://short.est/py_ques/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"decode"
+					],
+					"query": [
+						{
+							"key": "shortURL",
+							"value": "http://short.est/py_ques/"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

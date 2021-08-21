@@ -1,0 +1,101 @@
+{
+	"info": {
+		"_postman_id": "0bfb88e4-a3c1-45c2-8ba7-5197263e0593",
+		"name": "ShortLink Error",
+		"description": "A URL shortening service developed using flask framework.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "EncodeRequest",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"url\":\"test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/encode",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"encode"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DecodeRequest",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"url\":\"https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_concepts_example_requests.htm\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/decode?shortURL=http://short.est/py_ques/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"decode"
+					],
+					"query": [
+						{
+							"key": "shortURL",
+							"value": "http://short.est/py_ques/"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

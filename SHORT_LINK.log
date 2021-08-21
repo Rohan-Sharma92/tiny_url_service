@@ -1,0 +1,8 @@
+2021-08-06 17:24:43,948:8784 - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2021-08-06 17:24:43,949:8784 - INFO -  * Running on http://10.101.141.63:8080/ (Press CTRL+C to quit)
+2021-08-06 17:24:49,327:12592 - INFO - Received encoding request: EncodingRequest[URL[https://stackoverflow.com/questions/3610272/]:Alias[test]]
+2021-08-06 17:24:49,327:12592 - INFO - Processing request with alias: EncodingRequest[URL[https://stackoverflow.com/questions/3610272/]:Alias[test]]
+2021-08-06 17:24:49,327:12592 - INFO - Adding URL mapping: DecodingRequest[LongURL[https://stackoverflow.com/questions/3610272/]:ShortURL[http://short.est/test/]:Alias[test]]
+2021-08-06 17:24:49,327:12592 - INFO - Sending response: {"longURL": "https://stackoverflow.com/questions/3610272/", "shortURL": "http://short.est/test/", "alias": "test"}
+2021-08-06 17:24:49,328:12592 - INFO - 127.0.0.1 - - [06/Aug/2021 17:24:49] "POST /encode HTTP/1.1" 200 -
